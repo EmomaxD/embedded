@@ -1,18 +1,18 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN PB5  // Arduino'nun D13 pinine karşılık gelir.
+#define LED_PIN PB5  // Corresponds to Arduino's D13 pin.
 
 int main(void) {
-    // LED pinini çıkış olarak ayarlıyoruz.
+    // Set the LED pin as an output.
     DDRB |= (1 << LED_PIN);
 
     while (1) {
-        // LED'i yak.
+        // Turn the LED on.
         PORTB |= (1 << LED_PIN);
         _delay_ms(1000);
 
-        // LED'i söndür.
+        // Turn the LED off.
         PORTB &= ~(1 << LED_PIN);
         _delay_ms(1000);
     }
